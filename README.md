@@ -1,12 +1,11 @@
 # dotclaude
 
-My curated, publicly shareable [Claude Code](https://claude.com/claude-code)
-config: the bits of `~/.claude` worth sharing. Skills today; custom commands,
-agents, hooks, statusline, and sanitized settings as I clean more up.
+Skills for any agent harness: [Claude Code](https://claude.com/claude-code),
+[Codex](https://developers.openai.com/codex), or anything else that reads
+`SKILL.md` files. They're the bits of my own setup worth sharing.
 
-It's a hand-picked mirror of `~/.claude`, not a sync. Everything here is scrubbed
-of private paths, project names, and secrets. Structure mirrors the real thing, so
-installing is just copying the pieces you want into your own `~/.claude/`.
+It's a hand-picked mirror, not a sync. Everything here is scrubbed of private
+paths, project names, and secrets.
 
 ## Skills
 
@@ -15,6 +14,7 @@ installing is just copying the pieces you want into your own `~/.claude/`.
 | [`genius-check`](skills/genius-check/SKILL.md) | One brilliant pass over **one** project. The genius reviews it read-only and writes a prioritized, executable `GENIUS-CHECKUP.md` a weaker model can act on later. The reusable unit. |
 | [`genius-queue`](skills/genius-queue/SKILL.md) | The **loop**. Runs your highest-leverage backlog (global instruction-layer fixes, then gnarly per-project problems, then a breadth checkup sweep) through the genius across many projects, then materializes every plan to disk in one pass at the end. |
 | [`humanizer`](skills/humanizer/SKILL.md) | Strips the tells of AI-generated prose — inflated significance, promotional language, em-dash overuse, rule-of-three, hedging, and 30-odd more patterns drawn from Wikipedia's "Signs of AI writing" guide. Edits your text in place so it reads like a person wrote it. |
+| [`podcast-it`](skills/podcast-it/SKILL.md) | Turns a report, research, meeting notes or a book into an episode on your own private podcast. Writes a script for the ear, renders it with a voice you picked in a blind test, checks the audio, and adds it to a feed your podcast app can subscribe to. Background: [Your to-read pile as a podcast](https://deknijf.com/posts/your-own-private-podcast/). |
 
 The genius skills exist to solve one problem. You occasionally get temporary
 access to a much smarter model (a frontier trial, a temporarily-unlocked higher
@@ -28,26 +28,34 @@ the model alias changes.
 
 ## Install
 
-Easiest: point your agent at this repo and let it do the work. Something like:
+Easiest: point your agent at this repo and let it do the work. Better still, let
+it read a skill and build a version that fits you. Something like:
 
 > Read https://github.com/rdeknijf/dotclaude and install the skills I want
 > (`genius-check`, `genius-queue`, `humanizer`) into my setup, wherever makes
 > sense for me (global `~/.claude/skills/`, or this project). For the genius
 > skills, adapt the genius-model alias to whatever top-tier model I actually have.
 
+Or, for the podcast skill:
+
+> Read https://github.com/rdeknijf/dotclaude/tree/main/skills/podcast-it and
+> https://deknijf.com/posts/your-own-private-podcast/, then set the skill up for
+> me. Do the setup steps with me.
+
 It reads the `SKILL.md` files, drops them where your harness looks for skills, and
-fixes up the model alias for you. That's the point of shipping them as plain,
+fixes up what needs fixing. That's the point of shipping them as plain,
 self-describing markdown.
 
-Prefer to do it by hand? Everything mirrors `~/.claude/`, so just copy what you want:
+Prefer to do it by hand? Copy a skill folder to where your harness looks for skills:
 
 ```bash
 git clone https://github.com/rdeknijf/dotclaude.git
-cp -r dotclaude/skills/* ~/.claude/skills/   # or pick individual skill dirs
+cp -r dotclaude/skills/* ~/.claude/skills/   # Claude Code (or pick single skill folders)
+cp -r dotclaude/skills/* ~/.agents/skills/   # Codex
 ```
 
-Either way, invoke them in Claude Code with `/genius-check <path>`, `/genius-queue`,
-or `/humanizer`.
+In Claude Code, invoke a skill with `/podcast-it`, `/humanizer` or `/genius-check <path>`.
+Codex and other harnesses pick a skill by its description, or when you name it.
 
 ## License
 
