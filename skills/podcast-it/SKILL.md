@@ -5,7 +5,7 @@ description: Turn a report, book notes, research, meeting notes, or any other bo
 
 # podcast-it
 
-This skill turns material into an episode on the user's private podcast. Most of the work is the script: a report read aloud does not work by ear. Rendering and publishing are one command each. The story behind it, and why each rule is here: [Your to-read pile as a podcast](https://deknijf.com/posts/your-own-private-podcast/).
+This skill turns material into an episode on the user's private podcast. Most of the work is the script: a report read aloud does not work by ear. Rendering and publishing are one command each. The story behind it, and why each rule is here: [Your to-read pile as a podcast](https://deknijf.com/posts/your-to-read-pile-as-a-podcast/).
 
 All paths below are relative to the folder that holds this file. Scripts run with [uv](https://docs.astral.sh/uv/) (`uv run --script scripts/<name>.py`) and need `ffmpeg` on the PATH.
 

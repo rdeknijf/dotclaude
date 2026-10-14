@@ -14,7 +14,7 @@ paths, project names, and secrets.
 | [`genius-check`](skills/genius-check/SKILL.md) | One brilliant pass over **one** project. The genius reviews it read-only and writes a prioritized, executable `GENIUS-CHECKUP.md` a weaker model can act on later. The reusable unit. |
 | [`genius-queue`](skills/genius-queue/SKILL.md) | The **loop**. Runs your highest-leverage backlog (global instruction-layer fixes, then gnarly per-project problems, then a breadth checkup sweep) through the genius across many projects, then materializes every plan to disk in one pass at the end. |
 | [`humanizer`](skills/humanizer/SKILL.md) | Strips the tells of AI-generated prose — inflated significance, promotional language, em-dash overuse, rule-of-three, hedging, and 30-odd more patterns drawn from Wikipedia's "Signs of AI writing" guide. Edits your text in place so it reads like a person wrote it. |
-| [`podcast-it`](skills/podcast-it/SKILL.md) | Turns a report, research, meeting notes or a book into an episode on your own private podcast. Writes a script for the ear, renders it with a voice you picked in a blind test, checks the audio, and adds it to a feed your podcast app can subscribe to. Background: [Your to-read pile as a podcast](https://deknijf.com/posts/your-own-private-podcast/). |
+| [`podcast-it`](skills/podcast-it/SKILL.md) | Turns a report, research, meeting notes or a book into an episode on your own private podcast. Writes a script for the ear, renders it with a voice you picked in a blind test, checks the audio, and adds it to a feed your podcast app can subscribe to. Background: [Your to-read pile as a podcast](https://deknijf.com/posts/your-to-read-pile-as-a-podcast/). |
 
 The genius skills exist to solve one problem. You occasionally get temporary
 access to a much smarter model (a frontier trial, a temporarily-unlocked higher
@@ -39,7 +39,7 @@ it read a skill and build a version that fits you. Something like:
 Or, for the podcast skill:
 
 > Read https://github.com/rdeknijf/dotclaude/tree/main/skills/podcast-it and
-> https://deknijf.com/posts/your-own-private-podcast/, then set the skill up for
+> https://deknijf.com/posts/your-to-read-pile-as-a-podcast/, then set the skill up for
 > me. Do the setup steps with me.
 
 It reads the `SKILL.md` files, drops them where your harness looks for skills, and
